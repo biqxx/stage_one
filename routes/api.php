@@ -24,7 +24,7 @@ Route::get('/', function (Request $request)
     $data = [];
     $data['slack_name'] = $request->query('slack_name');
     $data['current_day'] = Carbon::now()->format('l');
-    $data['utc_time'] = Carbon::now()->utc();
+    $data['utc_time'] = Carbon::now()->utc()->format('Y-m-d').'T'.Carbon::now()->utc()->format('H:i:s').'Z';
     $data['track'] = $request->query('track');
     $data['github_file_url'] = 'https://github.com/biqxx/stage_one/blob/main/routes/api.php';
     $data['github_repo_url'] = 'https://github.com/biqxx/stage_one.git';
