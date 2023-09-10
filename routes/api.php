@@ -26,7 +26,7 @@ Route::get('/', function (Request $request)
     $data['current_day'] = Carbon::now()->format('l');
     $data['utc_time'] = Carbon::now()->utc();
     $data['track'] = $request->query('track');
-    $data['github_file_url'] = null;
+    $data['github_file_url'] = 'https://github.com/biqxx/stage_one/blob/main/routes/api.php';
     $data['github_repo_url'] = 'https://github.com/biqxx/stage_one.git';
     $data['status_code'] = 200;
     return response()->json($data, 200);
